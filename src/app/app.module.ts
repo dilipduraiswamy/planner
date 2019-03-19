@@ -11,6 +11,14 @@ import { ButtonComponent } from './button/button.component';
 import { RadioComponent } from './radio/radio.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 
+  import {MatCheckboxModule} from '@angular/material/checkbox';
+  import {MatDatepickerModule} from '@angular/material/datepicker';
+  import {MatInputModule} from '@angular/material/input';
+  
+  import {MatRadioModule} from '@angular/material/radio';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,12 +29,21 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
     ButtonComponent,
     RadioComponent,
     DatepickerComponent
+    
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatRadioModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    MatInputModule
+  ]
 })
 export class AppModule { }
