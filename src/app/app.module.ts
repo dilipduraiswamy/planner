@@ -11,13 +11,27 @@ import { ButtonComponent } from './button/button.component';
 import { RadioComponent } from './radio/radio.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 
-  import {MatCheckboxModule} from '@angular/material/checkbox';
-  import {MatDatepickerModule} from '@angular/material/datepicker';
-  import {MatInputModule} from '@angular/material/input';
-  import { MatSelectModule } from '@angular/material/select';
-  import {MatRadioModule} from '@angular/material/radio';
-  import { MatFormFieldModule } from '@angular/material';
+  
   import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+  import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+  import { MatMomentDateModule } from "@angular/material-moment-adapter";
+  import { CommonModule } from "@angular/common";
+  import {
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatListModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatCheckboxModule,
+    MatRadioModule
+    } from "@angular/material";
+import { DynamicFieldDirective } from './dynamic-field/dynamic-field.directive';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +41,9 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
     LabelComponent,
     ButtonComponent,
     RadioComponent,
-    DatepickerComponent
+    DatepickerComponent,
+    DynamicFieldDirective,
+    DynamicFormComponent
   ],
   imports: [
     BrowserModule,
@@ -39,8 +55,46 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatMomentDateModule,
+    CommonModule,
+    MatButtonModule,
+MatIconModule,
+MatCardModule,
+MatFormFieldModule,
+MatInputModule,
+MatListModule,
+MatDatepickerModule,
+MatNativeDateModule,
+MatMomentDateModule,
+MatSelectModule,
+MatOptionModule,
+MatCheckboxModule,
+MatRadioModule
   ],
+  exports: [
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatListModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatMomentDateModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatCheckboxModule,
+    MatRadioModule
+    ],
+    entryComponents: [
+      TextfieldComponent,
+      ButtonComponent,
+      SelectComponent,
+      CheckboxComponent
+      ],
   providers: [],
   bootstrap: [AppComponent]
 })

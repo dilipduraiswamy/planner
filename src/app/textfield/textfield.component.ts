@@ -1,15 +1,16 @@
-import { Component, OnInit,ElementRef } from '@angular/core';
 
+
+import { Component, OnInit } from "@angular/core";
+import { FormGroup } from "@angular/forms";
+import { FieldConfig } from "../field.interface";
 @Component({
-  selector: 'app-textfield',
+  selector: "app-input",
   templateUrl: './textfield.component.html',
-  styleUrls: ['./textfield.component.css']
+  styles: []
 })
 export class TextfieldComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  field: FieldConfig;
+  group: FormGroup;
+  constructor() {}
+  ngOnInit() {}
 }
