@@ -1,5 +1,13 @@
-<mat-form-field class="demo-full-width margin-top" [formGroup]="group">
+<!-- <mat-form-field class="demo-full-width margin-top" [formGroup]="group">
   <mat-select [placeholder]="field.label" [formControlName]="field.name">
   <mat-option *ngFor="let item of field.options" [value]="item">{{item}}</mat-option>
   </mat-select>
-  </mat-form-field>
+  </mat-form-field> -->
+
+  <div class="form-group" [formGroup]="group">
+      <label >{{field.label}}</label>
+      <select  class="form-control" [formControlName]="field.name">
+        <option *ngFor="let item of field.options" [value]="item">{{item}}</option>
+       
+      </select>
+      </div>

@@ -11,7 +11,9 @@ import { ButtonComponent } from './button/button.component';
 import { RadioComponent } from './radio/radio.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 
-  
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatGridListModule} from '@angular/material/grid-list';
+
   import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
   import { FormsModule, ReactiveFormsModule } from "@angular/forms";
   import { MatMomentDateModule } from "@angular/material-moment-adapter";
@@ -72,7 +74,9 @@ MatMomentDateModule,
 MatSelectModule,
 MatOptionModule,
 MatCheckboxModule,
-MatRadioModule
+MatRadioModule,
+MatToolbarModule,
+MatGridListModule
   ],
   exports: [
     MatButtonModule,
