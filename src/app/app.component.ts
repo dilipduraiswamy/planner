@@ -2,6 +2,8 @@ import { Component, ViewChild } from "@angular/core";
 import { Validators } from "@angular/forms";
 import { FieldConfig } from "./field.interface";
 import { DynamicFormComponent } from "./dynamic-form/dynamic-form.component";
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+
 export interface Tile {
   color: string;
   cols: number;
@@ -49,6 +51,27 @@ export class AppComponent {
     {text: 'Three', cols: 3, rows: 3, color: 'lightpink'}
    
   ];
+  todo = [
+    'Text Box',
+    'Select ',
+    'Radio',
+    'Checkbox',
+    'Textarea'
+  ];
 
+  done = [
+    
+  ];
+
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(event.previousContainer.data,
+                        event.container.data,
+                        event.previousIndex,
+                        event.currentIndex);
+    }
+  }
   submit(value: any) {}
 }

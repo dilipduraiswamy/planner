@@ -1,7 +1,7 @@
 <!-- 
 <router-outlet></router-outlet> -->
 
- <mat-toolbar color="primary">
+<mat-toolbar color="primary">
 
 
     <mat-toolbar-row>
@@ -25,44 +25,81 @@
 
 
 <div class="container-fluid">
-        
-        <div >
-          <!-- Control the column width, and how they should appear on different devices -->
-          <div class="row">
-            <div class="col-sm-2" >
-               
-                    <!--Card image-->
-                   
-                    Html Elements Panel
-                    
-                  
-                 </div>
-            <div class="col-sm-10" >
-               
 
-                   
-                    <!--Card content-->
-                    <div class="card-body">
-                      <!--Title-->
-                      <h4 class="card-title">Dynamic title</h4>
+    <div>
+        <!-- Control the column width, and how they should appear on different devices -->
+        <div class="row">
+            <div class="col-sm-4">
 
-                      <dynamic-form [fields]="regConfig" (submit)="submit($event)">
-                        </dynamic-form>
-                        <!-- <div class="margin-top">
+                <!--Card image-->
+
+                <br>
+
+                <div class="example-container">
+
+
+                    <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList]" class="example-list"
+                        (cdkDropListDropped)="drop($event)">
+                        <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+            <div class="col-sm-4">
+
+
+
+                <br>
+
+
+
+                <div class="example-container">
+
+
+                    <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList]" class="example-list"
+                        (cdkDropListDropped)="drop($event)">
+                        <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+            <div class="col-sm-3">
+
+
+
+                <!--Card content-->
+                <div class="card-body">
+                    <!--Title-->
+                    <h4 class="card-title">Preview</h4>
+
+                    <dynamic-form [fields]="regConfig" (submit)="submit($event)">
+                    </dynamic-form>
+                    <!-- <div class="margin-top">
                             {{ form.value | json }}
                         </div> -->
 
-                   
-                    </div>
-                  
-                 </div>
-          </div>
-       
-          
-          
+
+                </div>
+
+            </div>
         </div>
-      </div>
-      
+
+
+
+    </div>
+</div>
+
+
 <!-- <mat-grid-list cols="4" rowHeight="100px">
     <mat-grid-tile [colspan]="1" [rowspan]="3"> <div class="form">
 

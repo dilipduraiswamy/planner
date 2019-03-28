@@ -34,6 +34,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     } from "@angular/material";
 import { DynamicFieldDirective } from './dynamic-field/dynamic-field.directive';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,7 +78,8 @@ MatOptionModule,
 MatCheckboxModule,
 MatRadioModule,
 MatToolbarModule,
-MatGridListModule
+MatGridListModule,
+DragDropModule
   ],
   exports: [
     MatButtonModule,
